@@ -6,8 +6,27 @@ var cleanCSS = require('gulp-clean-css');
 var rename = require("gulp-rename");
 var uglify = require('gulp-uglify');
 
+// Set the banner content
+var banner = ['/*!\n',
+    ' * MACS DTU - <%= pkg.title %> v<%= pkg.version %> (<%= pkg.homepage %>)\n',
+    ' * Copyright 2017-' + (new Date()).getFullYear(), ' <%= pkg.author %>\n',
+    ' * Licensed under <%= pkg.license.type %> (<%= pkg.license.url %>)\n',
+    ' */\n',
+    ''
+].join('');
+
 gulp.task('less', function() {
     return gulp.src('less/myblog.less')
+        .pipe(less())
+        .pipe(header(banner, { pkg: pkg }))
+        .pipe(gulp.dest('css'))
+        .pipe(browserSync.reload({
+            stream: true
+        }))
+});
+
+gulp.task('less', function() {
+    return gulp.src('less/myblog_event.less')
         .pipe(less())
         .pipe(header(banner, { pkg: pkg }))
         .pipe(gulp.dest('css'))
