@@ -23,10 +23,10 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 	
 	<style>
-		.image1, .image2, .image3, .image4{
+		.image1, .image2, .image3, .image4, .image5, .image6{
 			-Webkit-animation-duration: 4s;
 			-Webkit-animation-delay: 0.5s;
-			-Webkit-animation-iteration-count: 3;
+			-Webkit-animation-iteration-count: 2;
 		}
 		
 	</style>
@@ -81,17 +81,17 @@
             </div>
         </div>
     </header>
-
-	<div class="container">
+	<section style="background-color:#fffdda;">
+	<div class="container" >
     	 
-    	<span class="col-lg-9 col-lg-offset-2 col-md-11 col-md-offset-1">
+    	<span class="col-lg-10 col-lg-offset-1 col-md-11 col-md-offset-0">
 			<h1><center>We proudly present to you - Asymptote</center></h1>
 			<b><center>"Because all work and no play makes Jack a dull boy."</center></b>
             <hr class="star-primary">
 		</span>
 		<br>
     	<div class="row">
-            <div class="col-lg-9 col-lg-offset-2 col-md-11 col-md-offset-0">
+            <div class="col-lg-10 col-lg-offset-1 col-md-11 col-md-offset-0">
                 	<div align="justify">
 					<p> 
 						ASYMPTOTES is the yearly fest organized by Mathematics &amp Computing 
@@ -123,12 +123,13 @@
             </div>
         </div>
     </div>
-    <!-- Portfolio Grid Section -->
-    <section id="portfolio">
+    </section>
+	<!-- Portfolio Grid Section -->
+    <section id="portfolio" style="background-color:#edfdd6;">
         <div class="container">
-			<span class="col-lg-9 col-lg-offset-2 col-md-11 col-md-offset-1">
+			<div class="row">
 				<h1><center>Upcoming Events</center></h1>
-			</span>
+			</div>
 			<hr class="star-primary">
             <div class="row">
                 <div class="col-sm-4 portfolio-item">
@@ -235,7 +236,6 @@
         </div>
     </section>
 
-    
     <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
     <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
         <a class="btn btn-primary" href="#page-top">
@@ -754,12 +754,10 @@
         </div>
     </div>
 	
-	<section>											<!-- section 2  of the page -->
-		<div class="container">
+	<section style="background-color:#dafeda;">											
+		<div class="container" >
 			<div class="row">
-				<span class="col-lg-9 col-lg-offset-2 col-md-11 col-md-offset-1">
-					<h1><center>Our Sponsors</center></h1>
-				</span>
+				<h1><center>Our Sponsors</center></h1>
 			</div>
 			<hr class="star-primary">
 			<div class="row">
@@ -767,19 +765,27 @@
 					<img src="img/sponsors/sponsor1.png" height="250" style="border:1px solid black"/>
 				</div>
 				<div class="col-sm-3 portfolio-item image2">
-					<img src="img/sponsors/sponsor2.png" height="260"/>
+					<img src="img/sponsors/sponsor2.png" height="250"/>
 				</div>
 				<div class="col-sm-3 portfolio-item image3">
-					<img src="img/sponsors/sponsor3.png" height="260"/>
+					<img src="img/sponsors/sponsor3.png" height="250"/>
 				</div>
 				<div class="col-sm-3 portfolio-item image4 ">
-					<img src="img/sponsors/sponsor4.png" height="260" style="border:1px solid black"/>
+					<img src="img/sponsors/sponsor4.png" height="250" style="border:1px solid black"/>
+				</div>
+			</div>
+			<br><br>
+			<div class="row">
+				<div class="col-sm-3 portfolio-item image5 ">
+					<img src="img/sponsors/sponsor5.png" height="250" style="border:1px solid black"/>
+				</div> 
+				<div class="col-sm-3 portfolio-item image6 ">
+					<img src="img/sponsors/sponsor6.png" height="250" style="border:1px solid black"/>
 				</div> 
 			</div>
 			
 		</div>
 	</section>
-	<hr class="star-primary">
 	<footer>
         <div class="container">
             <div class="row">
@@ -853,6 +859,16 @@
 		$(function(){
 			$('.image4').on('click',function(){
 				$('.image4').addClass('animated pulse');
+			});
+		});
+		$(function(){
+			$('.image5').on('click',function(){
+				$('.image5').addClass('animated pulse');
+			});
+		});
+		$(function(){
+			$('.image6').on('click',function(){
+				$('.image6').addClass('animated pulse');
 			});
 		});
 	</script>
