@@ -7,8 +7,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="MACS website">
-    <title>macs</title>
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	
+    <title>MACS DTU</title>
+    <link rel="icon" href="favicon.png" type="image/png">
+	<link rel="shortcut icon" href="favicon.ico" type="img/x-icon">
+	<link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="shortcut icon" href="img/icon.ico" />
     <link href="css/myblog.min.css" rel="stylesheet">
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -32,9 +35,7 @@
 </head>
 
 <body>
-					<!--navigation bar of the page-->
-
-
+	
     <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
         <div class="container-fluid">
             <div class="navbar-header page-scroll">
@@ -69,139 +70,190 @@
     </nav>         
 	<!-- slider part of the page-->
 	<!-- Full Page Image Background Carousel Header -->
-    <header id="myCarousel" class="carousel slide">
-        <!-- Indicators -->
-        <ol class="carousel-indicators">
-            <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-            <li data-target="#myCarousel" data-slide-to="1"></li>
-            <li data-target="#myCarousel" data-slide-to="2"></li>
-        </ol>
+    <header >
+       <script src="js/jssor.slider-22.1.9.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        jssor_1_slider_init = function() {
 
-        <!-- Wrapper for Slides -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <!-- Set the first background image using inline CSS below. -->
-                <img src="img/a.jpg"  alt="Chania" style="height:500px;">
-                <div class="carousel-caption">
-                    <h1>Caption 1</h1>
-					<span class="subheading"><b>Have questions? We have answers (maybe).</b></span>
-                </div>
+            var jssor_1_options = {
+              $AutoPlay: true,
+              $SlideDuration: 800,
+              $SlideEasing: $Jease$.$OutQuint,
+              $ArrowNavigatorOptions: {
+                $Class: $JssorArrowNavigator$
+              },
+              $BulletNavigatorOptions: {
+                $Class: $JssorBulletNavigator$
+              }
+            };
+
+            var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+            /*responsive code begin*/
+            /*you can remove responsive code if you don't want the slider scales while window resizing*/
+            function ScaleSlider() {
+                var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+                if (refSize) {
+                    refSize = Math.min(refSize, 1920);
+                    jssor_1_slider.$ScaleWidth(refSize);
+                }
+                else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+            ScaleSlider();
+            $Jssor$.$AddEvent(window, "load", ScaleSlider);
+            $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+            $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+            /*responsive code end*/
+        };
+    </script>
+    <style>
+        /* jssor slider bullet navigator skin 05 css */
+        /*
+        .jssorb05 div           (normal)
+        .jssorb05 div:hover     (normal mouseover)
+        .jssorb05 .av           (active)
+        .jssorb05 .av:hover     (active mouseover)
+        .jssorb05 .dn           (mousedown)
+        */
+        .jssorb05 {
+            position: absolute;
+        }
+        .jssorb05 div, .jssorb05 div:hover, .jssorb05 .av {
+            position: absolute;
+            /* size of bullet elment */
+            width: 16px;
+            height: 16px;
+            background: url('img/b05.png') no-repeat;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        .jssorb05 div { background-position: -7px -7px; }
+        .jssorb05 div:hover, .jssorb05 .av:hover { background-position: -37px -7px; }
+        .jssorb05 .av { background-position: -67px -7px; }
+        .jssorb05 .dn, .jssorb05 .dn:hover { background-position: -97px -7px; }
+
+        /* jssor slider arrow navigator skin 22 css */
+        /*
+        .jssora22l                  (normal)
+        .jssora22r                  (normal)
+        .jssora22l:hover            (normal mouseover)
+        .jssora22r:hover            (normal mouseover)
+        .jssora22l.jssora22ldn      (mousedown)
+        .jssora22r.jssora22rdn      (mousedown)
+        .jssora22l.jssora22lds      (disabled)
+        .jssora22r.jssora22rds      (disabled)
+        */
+        .jssora22l, .jssora22r {
+            display: block;
+            position: absolute;
+            /* size of arrow element */
+            width: 40px;
+            height: 58px;
+            cursor: pointer;
+            background: url('img/a22.png') center center no-repeat;
+            overflow: hidden;
+        }
+        .jssora22l { background-position: -10px -31px; }
+        .jssora22r { background-position: -70px -31px; }
+        .jssora22l:hover { background-position: -130px -31px; }
+        .jssora22r:hover { background-position: -190px -31px; }
+        .jssora22l.jssora22ldn { background-position: -250px -31px; }
+        .jssora22r.jssora22rdn { background-position: -310px -31px; }
+        .jssora22l.jssora22lds { background-position: -10px -31px; opacity: .3; pointer-events: none; }
+        .jssora22r.jssora22rds { background-position: -70px -31px; opacity: .3; pointer-events: none; }
+    </style>
+    <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:1300px;height:500px;overflow:hidden;visibility:hidden;">
+        
+        <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1300px;height:500px;overflow:hidden;">
+            <div >
+                <img data-u="image" src="img//slider/slider-01.jpg" />
+                <div style="position:absolute;top:200px;left:520px;width:480px;height:120px;z-index:0;font-family:'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:50px;color:#ffffff;line-height:60px;">
+					<b>MACS DTU</b>
+				</div>
+                <!--
+				<div style="position:absolute;top:300px;left:30px;width:480px;height:120px;z-index:0;font-family:'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:30px;color:#ffffff;line-height:38px;">
+					tag tag tag tag tag tag tag tag
+				</div>
+				-->
             </div>
-            <div class="item">
-                <!-- Set the second background image using inline CSS below. -->
-               <img src="img/b.jpg"  alt="Chania" style="height:500px;">
-                <div class="carousel-caption">
-                    <h1>Caption 2</h1>
-					<span class="subheading"><b>Have questions? We have answers (maybe).</b></span>
-                </div>
+            <div >
+                <img data-u="image" src="img//slider/slider-02.jpg" />
+				 <div style="position:absolute;top:200px;left:520px;width:480px;height:120px;z-index:0;font-family:'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:50px;color:#ffffff;line-height:60px;">
+					<b>MACS DTU</b>
+				</div>
+                 <!--
+				<div style="position:absolute;top:300px;left:30px;width:480px;height:120px;z-index:0;font-family:'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:30px;color:#ffffff;line-height:38px;">
+					tag tag tag tag tag tag tag tag
+				</div>
+				-->
             </div>
-            <div class="item">
-                <!-- Set the third background image using inline CSS below. -->
-                <img src="img/c.jpg"  alt="Chania" style="height:500px;">
-                <div class="carousel-caption">
-                    <h1>Caption 3</h1>
-					<span class="subheading"><b>Have questions? We have answers (maybe).</b></span>
-                </div>
+            <div>
+                <img data-u="image" src="img//slider/slider-03.jpg" />
+				 <div style="position:absolute;top:200px;left:520px;width:480px;height:120px;z-index:0;font-family:'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; font-size:50px;color:#ffffff;line-height:60px;">
+					<b>MACS DTU</b>
+				</div>
+                 <!--
+				<div style="position:absolute;top:300px;left:30px;width:480px;height:120px;z-index:0;font-family:'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;font-size:30px;color:#ffffff;line-height:38px;">
+					tag tag tag tag tag tag tag tag
+				</div>
+				-->
             </div>
         </div>
-
-        <!-- Controls -->
-        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-            <span class="icon-prev"></span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" data-slide="next">
-            <span class="icon-next"></span>
-        </a>
-
+        <!-- Bullet Navigator -->
+        <div data-u="navigator" class="jssorb05" style="bottom:16px;right:16px;" data-autocenter="1">
+            <!-- bullet navigator item prototype -->
+            <div data-u="prototype" style="width:16px;height:16px;"></div>
+        </div>
+        <!-- Arrow Navigator -->
+        <span data-u="arrowleft" class="jssora22l" style="top:0px;left:8px;width:40px;height:58px;" data-autocenter="2"></span>
+        <span data-u="arrowright" class="jssora22r" style="top:0px;right:8px;width:40px;height:58px;" data-autocenter="2"></span>
+    </div>
+    <script type="text/javascript">jssor_1_slider_init();</script>
     </header>
 
-    <hr>
 	
-	<section>											<!-- section 2  of the page -->
-	
-	<div class="container">
-	<div class="jumbotron">
-		<div class="row">
-			<div class="col-lg-3 col-sm-3" style="margin-top:35px">
-				<img src="img/logo-main.png" height="200px" style="border-radius:50%"/>
+	<section style="background-color:#edfdd6;">
+		<div class="container">
+			<div class="container1 grow" >
+				<div class="text">M</div>
+				<div class="text1">ACS</div>
 			</div>
-			<div class="col-lg-9 col-sm-9">
-				<p>tag lines tag lines tag lines tag lines tag lines tag lines tag lines tag lines tag lines</p>
-				<p>tag lines tag lines tag lines tag lines tag lines tag lines tag lines tag lines</p>
-				<p>tag lines tag lines tag lines tag lines tag lines tag lines tag lines</p>
-				<p>tag lines tag lines tag lines tag lines tag lines tag lines</p>
-			</div>
-			<div class="col-lg-12 col-sm-12">
-				<div><strong>MACS(Mathematics and Computing society)</strong></div>
-				<p>MACS is our humble endeavor to strength this bond.
-				Established in 2013, MACS has come out as a strong society.It has 
-				a strengthof around 50 budding engineers behind it.Year round 
-				workshops , lectures , events keep the students involved
-				and busy.Delhi Technological University houses some of the brightest
-				minds of the country.The students here are a plethora of talent and ,
-				at MACS, offer to servethem with best we can and try and nurture future
-				mathematicians.Mathematicsacts as a connection link among all branches 
-				of engineering and therefore,we here at MACS provide an opportunity to
-				students to showcase theirmathematics rowessand also help them learn,
-				practice and master their skills through workshops, seminars, interactive
-				sessions and symposiums.
-				</p>
-			</div>
+			
+			<div class="row">
+				<div class="col-lg-10 col-lg-offset-1 col-md-11 col-md-offset-0">
+					<div class="col-md-4">
+						<br><br>
+						<center><img src="img/logo-main.png" alt="logo" width="200px" height="200px" style="border-radius:50%;" /></center>
+					</div>
+					<div align="justify">
+						<p> MACS is our humble endeavor to strength this bond. Established in 2013, MACS has come out as a strong society.
+							It has a strengthof around 50 budding engineers behind it.Year round workshops , lectures , events keep the 
+							students involved and busy.<br>Delhi Technological University houses some of the brightest minds of the country.
+							The students here are a plethora of talent and , at MACS, offer to servethem with best we can and try and 
+							nurture future mathematicians.Mathematicsacts as a connection link among all branches of engineering and 
+							therefore,we here at MACS provide an opportunity to students to showcase theirmathematics rowessand also 
+							help them learn, practice and master their skills through workshops, seminars, interactive sessions and symposiums.
+						</p>
+					</div>
+					
+				</div>
 			</div>
 		</div>
-	</div>
-	</section>						
+	</section>					
 
 
 
-
-    <section>
-	 
-	 <!--section 4 of the page-->
-      <!-- Example row of columns -->
-      
-	  <!--<div class="row">
-        <div class="col-lg-4 col-sm-12 col-md-4">
-          <h2>Event  1</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
-        </div>
-        <div class="col-lg-4 col-sm-12 col-md-4">
-          <h2>Event 2</h2>
-          <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
-       </div>
-        <div class="col-lg-4 col-sm-12 col-md-4">
-          <h2>Event 3</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
-        </div>
-		<div class="col-lg-4 col-sm-12 col-md-4">
-          <h2>Event 4</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
-        </div>
-		<div class="col-lg-4 col-sm-12 col-md-4">
-          <h2>Event 5</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
-        </div>
-		<div class="col-lg-4 col-sm-12 col-md-4">
-          <h2>Event 6</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa.</p>
-          <p><a class="btn btn-primary" href="#" role="button">View details &raquo;</a></p>
-        </div>
-      </div>-->
-	
-	
 
     <!-- Portfolio Grid Section -->
-    <section id="portfolio">
-        <div class="container">
-			<span class="col-lg-9 col-lg-offset-2 col-md-11 col-md-offset-1">
+    <section id="portfolio" style="background-color:#fff5ee;">
+        <div class="container" >
+			<span class="col-lg-9 col-lg-offset-2 col-md-11 col-md-offset-1 grow">
 				<h1><center>Upcoming Events</center></h1>
 			</span>
 			<hr class="star-primary">
+			<br><br>
             <div class="row">
                 <div class="col-sm-4 portfolio-item">
                     <a href="#portfolioModal1" class="portfolio-link" data-toggle="modal">
@@ -307,7 +359,47 @@
         </div>
     </section>
 
-    
+    <!-- Portfolio Grid Section -->
+    <section id="portfolio" style="background-color:#edfdd6;">
+        <div class="container">
+			<div class="row grow">
+				<h1><center>Events hosted so far</center></h1>
+			</div>
+			<hr class="star-primary">
+            <div class="row">
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#portfolioModal11" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/event/event11.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#portfolioModal12" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/event/event12.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+                <div class="col-sm-4 portfolio-item">
+                    <a href="#portfolioModal13" class="portfolio-link" data-toggle="modal">
+                        <div class="caption">
+                            <div class="caption-content">
+                                <i class="fa fa-search-plus fa-3x"></i>
+                            </div>
+                        </div>
+                        <img src="img/event/event13.png" class="img-responsive" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Scroll to Top Button (Only visible on small and extra-small screen sizes) -->
     <div class="scroll-top page-scroll hidden-sm hidden-xs hidden-lg hidden-md">
         <a class="btn btn-primary" href="#page-top">
@@ -825,10 +917,140 @@
             </div>
         </div>
     </div>
+	<div class="portfolio-modal modal fade" id="portfolioModal11" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Javascript Workshop</h2>
+                            <hr class="star-primary">
+                            <img src="img/event/event11.png" class="img-responsive img-centered" alt="">
+                            <b>About:</b>
+							<p align="justify">
+								It was a Special Interest Group(SIG) workshop conducted by Mohit Sharma(Web development head, MACS DTU). 
+							</p>
+							<img src="img/event/event11a.png" class="img-responsive img-centered" alt="">
+							<img src="img/event/event11b.png" class="img-responsive img-centered" alt="">
+							<p>
+								The purpose of the workshop was to make students aware of current Web technologies &amp platforms. It started 
+								with a brief introduction of HTML and CSS. 
+							</p>
+							
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="portfolio-modal modal fade" id="portfolioModal12" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Logo Hunt</h2>
+                            <hr class="star-primary">
+                            <img src="img/event/event12.png" class="img-responsive img-centered" alt="">
+                            <b>About the event:</b>
+							<p align="justify">
+								Design a digital logo for our Techfest- "Asymptotes" and send in your work by 23/10/2016 ,5:00 p.m at dtu.macs@gmail.com 
+							</p>
+							
+							<b>Rules and Regulations:</b>
+							<ol align="justify">
+								<li>Your logo would be uploaded on our Facebook page on the evening of 23/10/16.</li>
+								<li>Get maximum likes on MACS's Fb page as well as your logo.You will have ONE WEEK(23-30) to do so.</li>
+								<li>Top two contestants with maximum likes on their entries will be awarded Rs.250 each.</li>
+								<li>Only those likes on your entry would be counted who have liked MACS's FB page too. Likes achieved before 5 p.m,
+								30/10/2016 would be taken into consideration.</li>
+							</ol>
+							
+							<b>Prize:</b>
+							<ol align="justify">
+								<li>Apart from the above mentioned prizes,a panel will decide over one winner and he/she will be awarded Rs. 500 as well as a certificate.</li>
+								<li>Moreover,if your logo really stands out then it may even get selected to represent our Techfest which will be held in Feb-2017.</li>
+							</ol>
+							
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	<div class="portfolio-modal modal fade" id="portfolioModal13" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="modal-content">
+            <div class="close-modal" data-dismiss="modal">
+                <div class="lr">
+                    <div class="rl">
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="modal-body">
+                            <h2>Graphic Design SIG</h2>
+                            <hr class="star-primary">
+                            <img src="img/event/event13.png" class="img-responsive img-centered" alt="">
+                            <br><b>About:</b><br>
+							
+							<img src="img/event/event13a.png" class="img-responsive img-centered" alt=""><br>
+                            <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+	
+	<section style="background-color:#ffffa4;">											
+		<div class="container" >
+			<div class="row  grow">
+				<h1><center>Our Sponsors</center></h1>
+			</div>
+			<hr class="star-primary">
+			<div class="row">
+				<div class="col-sm-2 image1 pulse">
+					<img src="img/sponsors/sponsor1.png" height="180" style="border:1px solid black; border-radius:50%"/>
+				</div> 
+				<div class="col-sm-2 image2 pulse">
+					<img src="img/sponsors/sponsor2.png" height="180" style="border:1px solid black; border-radius:50%"/>
+				</div> 
+				<div class="col-sm-2  image3 pulse">
+					<img src="img/sponsors/sponsor3.png" height="180" style="border:1px solid black; border-radius:50%"/>
+				</div> 
+				<div class="col-sm-2  image4 pulse">
+					<img src="img/sponsors/sponsor4.png" height="180" style="border:1px solid black; border-radius:50%"/>
+				</div>
+				<div class="col-sm-2 image5 pulse">
+					<img src="img/sponsors/sponsor5.png" height="180" style="border:1px solid black; border-radius:50%"/>
+				</div> 
+				<div class="col-sm-2 image6 pulse">
+					<img src="img/sponsors/sponsor6.png" height="180" style="border:1px solid black; border-radius:50%"/>
+				</div> 
+			</div>
+		</div>
+		
+	</section>
 	
     <footer><!--footer -->
         <div class="container">
-			<div class="jumbotron">
+			
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
                     <ul class="list-inline text-center">
@@ -877,7 +1099,7 @@
                     <p class="copyright text-muted">Copyright &copy; MACS.github.io 2017</p>
                 </div>
             </div>
-			</div>
+			
         </div>
     </footer>
     <script src="vendor/jquery/jquery.min.js"></script>
